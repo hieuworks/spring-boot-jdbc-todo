@@ -1,0 +1,11 @@
+services:
+
+  db:
+    image: postgres:18
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_DB: todo_spring_boot_db
+      POSTGRES_USER: YOUR_POSTGRES_USERNAME
+      POSTGRES_PASSWORD: YOUR_POSTGRES_PASSWORD
