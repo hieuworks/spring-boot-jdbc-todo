@@ -1,21 +1,18 @@
 package com.example.todo.controller;
 
 import com.example.todo.domain.dto.TodoCategoryDto;
-import com.example.todo.domain.entity.TodoCategoryEntity;
 import com.example.todo.service.TodoCategoryService;
-import jdk.jfr.Category;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ToDoCategoryController {
+public class TodoCategoryController {
     private final TodoCategoryService service;
 
-    public ToDoCategoryController(TodoCategoryService service) {
+    public TodoCategoryController(TodoCategoryService service) {
         this.service = service;
     }
 
