@@ -5,9 +5,7 @@ import com.example.todo.domain.dto.TodoDto;
 import com.example.todo.service.TodoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class TodoController {
@@ -20,5 +18,12 @@ public class TodoController {
     public ResponseEntity<TodoDto> createTodo(@RequestBody TodoDto request){
         return new ResponseEntity<>(service.create(request), HttpStatus.CREATED);
     }
-
+    @PatchMapping("api/v1/{id}/complete")
+    public ResponseEntity<TodoDto> updateTodoStatusTrue(@PathVariable Long id){
+        return ResponseEntity.ok(service.setStatusTrue(id));
+    }
+    @PatchMapping("api/v1/{id}/un-complete")
+    public ResponseEntity<TodoDto> updateTodoStatusFalse(@PathVariable Long id){
+        return ResponseEntity.ok(service.setStatusFalse(id));
+    }
 }

@@ -24,4 +24,14 @@ public class TodoServiceImpl implements TodoService {
         TodoEntity savedEntity = todoDao.createTodo(entity);
         return mapper.toDto(savedEntity);
     }
+    @Override
+    public TodoDto setStatusTrue(Long id){
+        TodoEntity toDoUpdated = todoDao.setStatusTrue(id);
+        return mapper.toDto(toDoUpdated);
+    }
+    @Override
+    public TodoDto setStatusFalse(Long id){
+        TodoEntity toDoUpdated = todoDao.setStatusFalse(id);
+        return mapper.toDto(toDoUpdated);
+    }
 }
