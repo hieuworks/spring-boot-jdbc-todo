@@ -16,7 +16,7 @@ public class TodoCategoryController {
         this.service = service;
     }
 
-    @PostMapping(path = "/category")
+    @PostMapping(path = "api/v1/category")
      public ResponseEntity<TodoCategoryDto> createCategory(@RequestBody TodoCategoryDto todoCategoryDto){
         return new ResponseEntity<>(service.create(todoCategoryDto), HttpStatus.CREATED);
     }

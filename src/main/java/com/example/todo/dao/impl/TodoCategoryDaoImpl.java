@@ -6,8 +6,9 @@ import org.springframework.stereotype.Component;
 
 import com.example.todo.dao.TodoCategoryDao;
 import com.example.todo.domain.entity.TodoCategoryEntity;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 public class TodoCategoryDaoImpl implements TodoCategoryDao {
     private static final SimplePropertyRowMapper<TodoCategoryEntity> ROW_MAPPER = new SimplePropertyRowMapper<>(TodoCategoryEntity.class);
     private final JdbcTemplate jdbcTemplate;

@@ -15,7 +15,7 @@ import java.time.OffsetDateTime;
 public class TodoEntity {
     private Long id;
 
-    private Long categoriesId;
+    private Long category_id;
 
     private String title;
 
@@ -23,7 +23,7 @@ public class TodoEntity {
 
     private Boolean status;
 
-    private Integer currentVersion;
+    private Integer current_version;
 
     private OffsetDateTime createdAt;
 
